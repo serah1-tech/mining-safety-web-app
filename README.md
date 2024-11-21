@@ -110,12 +110,6 @@ Follow the prompts to set up the superuser credentials.
 5. Run the Development Server
 Start the server:
 
-bash
-Copy code
-python manage.py runserver
-Visit http://127.0.0.1:8000/ in your browser to view the app. You should see the "Welcome to the Mining Safety Tips App!" message.
-
-To access the Django admin panel, go to http://127.0.0.1:8000/admin/ and log in with the superuser credentials you created.
 
 Next Steps
 Enhance the UI: Add custom CSS to improve the visual appeal of the app.
