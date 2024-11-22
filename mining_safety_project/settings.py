@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'education',
-    'hazards',
+    'education', #Education app added
+    'hazards', #Hazard app added
+    'users'#Users app added
 ]
 
 
