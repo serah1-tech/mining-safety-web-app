@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse  # Imported HttpResponse for the view
+from . import views  # Import the home view
 
 # Defined the home view
 def home(request):
@@ -24,9 +25,10 @@ def home(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home'),  # Added this for the root URL
+    path('', views.home, name='home'),  # Map the root URL to the homepage view
     path('education/', include('education.urls')),  # Education app URLs
     path('hazards/', include('hazards.urls')),        # Hazards app URLs
     path('auth/', include('django.contrib.auth.urls')),  # Authentication views
     path('users/', include('users.urls')),  #  users URLs
+   
 ]
