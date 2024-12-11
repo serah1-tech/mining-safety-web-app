@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import SafetyLesson
+from .models import Lesson
 
-@admin.register(SafetyLesson)
-class SafetyLessonAdmin(admin.ModelAdmin):
-    list_display = ('title', 'video_url')  # Display these fields in the admin list view
+class LessonAdmin(admin.ModelAdmin):
+    list_display = ('title', 'video_url', 'created_at')  # Ensure these fields are valid
+
+admin.site.register(Lesson, LessonAdmin)

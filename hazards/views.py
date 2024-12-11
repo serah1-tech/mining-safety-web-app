@@ -1,7 +1,5 @@
+# In your app's views.py
 from django.shortcuts import render
 
-from django.http import HttpResponse
-
-def home(request):
-    return HttpResponse("Welcome to the Hazards App!")
-
+def hazards(request):
+    return render(request, 'hazards/alert_list.html')  # Correct path to the template

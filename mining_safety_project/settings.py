@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'education', #Education app added
     'hazards', #Hazard app added
-    'users'#Users app added
+    'accounts'#Users app added
+    
+    
 ]
 
 
@@ -59,7 +61,8 @@ ROOT_URLCONF = 'mining_safety_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'mining_safety_project/templates'],  # Path to the templates folder
+        
+        'DIRS': [BASE_DIR / 'templates' ], # Ensure this is correctly indented and ends with a comma
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,13 +128,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
-# Optional: If you want Django to serve static files during development
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
-# Add this line to specify the directory where static files will be collected
+# settings.py
+
+
+# URL for static files
+STATIC_URL = '/static/'
+
+# Directory where Django looks for static files in your project
+
+# Static files directory setup
+STATICFILES_DIRS = [BASE_DIR / 'static',]
+
+# Directory for collected static files in production
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

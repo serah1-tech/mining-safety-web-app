@@ -1,0 +1,42 @@
+{% load static %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-text">
+        <h2>Your Safety, Our Priority</h2>
+        <p>Explore comprehensive resources to ensure safe mining practices.</p>
+        <!-- Call-to-action button -->
+        <a href="{% url 'safety_lessons' %}" class="btn">Discover More</a>
+    </div>
+    
+</section>
+
+<!-- Feature Section -->
+<section class="features">
+    <!-- Feature 1 -->
+    <div class="feature">
+        <h3>Hazards</h3>
+        <p>Learn about potential mining hazards and how to mitigate them.</p>
+        <!-- Link to the Hazards page -->
+        <a href="{% url 'hazards' %}">Learn More</a>
+    </div>
+    <!-- Feature 2 -->
+    <div class="feature">
+        <h3>Education</h3>
+        <p>Access educational materials to enhance mining safety.</p>
+        <!-- Link to the Safety Lessons page -->
+        <a href="{% url 'safety_lessons' %}">Explore Education</a>
+    </div>
+    <!-- Feature 3 -->
+    <div class="feature">
+        <h3>Get Started</h3>
+        <p>Register and join the community to promote safety awareness.</p>
+        <!-- Link to the registration page -->
+        <a href="{% url 'register' %}">Register Now</a>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <p>&copy; {{ current_year }} Mining Safety App. All rights reserved.</p>
+</footer>
+

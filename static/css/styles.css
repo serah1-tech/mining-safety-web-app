@@ -1,0 +1,138 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #edf3f1; /* Light teal background */
+    color: #333; /* Darker text color */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+header nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #198754; /* Green hover effect */
+}
+
+header .icons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.hero .text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.hero .button {
+    display: inline-block;
+    background-color: #198754; /* Green button */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.hero .button:hover {
+    background-color: #145d40; /* Darker green hover */
+}
+
+/* Image Section */
+.hero .image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+/* Feature Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.features .feature {
+    text-align: center;
+    padding: 20px;
+}
+
+.features .feature img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.features .feature h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.features .feature p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #edf3f1; /* Matches background */
+    color: #333;
+}

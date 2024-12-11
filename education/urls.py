@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import safety_lessons
+from . import views
 
 urlpatterns = [
-    path('lessons/', safety_lessons, name='safety_lessons'),  # Added this line
+    path('safety_lessons/', views.safety_lessons, name='safety_lessons'),  # Use a specific name for the view
 ]
+
