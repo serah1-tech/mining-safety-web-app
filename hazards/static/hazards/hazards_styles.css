@@ -1,0 +1,24 @@
+/* hazards.css */
+.hazard-list {
+    font-family: Arial, sans-serif;
+    color: red;
+    background-color: yellow;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+.hazard-item {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+footer {
+    background-color: #f1f1f1;
+    padding: 4px;
+    text-align: center;
+    color: #000000;
+    font-size: 20px; /* Increase this to make the font larger */
+    border-top: 10px solid #ddd;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

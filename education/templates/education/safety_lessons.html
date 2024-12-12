@@ -1,62 +1,60 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about safety lessons in mining through our educational videos and materials.">
+    <meta name="description" content="Learn about safety lessons in mining through our educational videos and materials. Stay safe and informed.">
+    <meta name="keywords" content="mining safety, safety lessons, educational videos, mining education, workplace safety">
+    <meta name="author" content="Mining Safety App">
+    
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'education/images/favicon.ico' %}" type="image/x-icon">
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="{% static 'education/css/education_styles.css' %}">
+    
     <title>Mining Safety Lessons</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .lesson {
-            padding: 10px;
-            background: #f9f9f9;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        h1 {
-            color: #333;
-        }
-        h2 {
-            color: #333;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        @media screen and (max-width: 600px) {
-            body {
-                margin: 10px;
-            }
-            .lesson {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 24px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <h1>Mining Safety Lessons</h1>
-    {% if lessons %}
-        {% for lesson in lessons %}
-            <section class="lesson">
-                <h2>{{ lesson.title }}</h2>
-                <p>{{ lesson.description }}</p>
-                {% if lesson.video_url %}
-                    <a href="{{ lesson.video_url }}" target="_blank" alt="Watch the video for {{ lesson.title }}">Watch Video</a>
-                {% endif %}
-            </section>
-        {% endfor %}
-    {% else %}
-        <p>No safety lessons available at the moment.</p>
-    {% endif %}
-</body>
-</html>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <!-- Back to Home link -->
+                <a href="{% url 'home' %}" class="back-home-link"> Home</a>
+
+                <li><a href="#lessons">Lessons</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <h1>Mining Safety Lessons</h1>
+
+        <!-- Checking for Lessons -->
+        {% if lessons %}
+            <div class="lessons-list">
+                {% for lesson in lessons %}
+                    <section class="lesson" id="lesson-{{ lesson.id }}">
+                        <h2>{{ lesson.title }}</h2>
+                        <p>{{ lesson.description }}</p>
+                        
+                        {% if lesson.video_url %}
+                            <a href="{{ lesson.video_url }}" target="_blank" alt="Watch the video for {{ lesson.title }}" class="video-link">Watch Video</a>
+                        {% endif %}
+                    </section>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No safety lessons available at the moment. Please check back later.</p>
+        {% endif %}
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Mining Safety App. All rights reserved.</p>
+    </footer>

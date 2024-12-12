@@ -1,7 +1,10 @@
+{% load static %}
 <!-- No need for inheritance -->
 <html>
+
 <head>
     <title>Register</title>
+    <link rel="stylesheet" href="{% static 'accounts/css/accounts_styles.css' %}">
 </head>
 <body>
     <h1>Register</h1>
@@ -11,5 +14,9 @@
         {{ form.as_p }}
         <button type="submit">Register</button>
     </form>
+    
 </body>
+<footer >
+    &copy; 2024 Mining Safety App. All rights reserved.
+</footer>
 </html>

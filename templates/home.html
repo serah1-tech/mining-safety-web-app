@@ -1,42 +1,76 @@
 {% load static %}
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-text">
-        <h2>Your Safety, Our Priority</h2>
-        <p>Explore comprehensive resources to ensure safe mining practices.</p>
-        <!-- Call-to-action button -->
-        <a href="{% url 'safety_lessons' %}" class="btn">Discover More</a>
-    </div>
-    
-</section>
 
-<!-- Feature Section -->
-<section class="features">
-    <!-- Feature 1 -->
-    <div class="feature">
-        <h3>Hazards</h3>
-        <p>Learn about potential mining hazards and how to mitigate them.</p>
-        <!-- Link to the Hazards page -->
-        <a href="{% url 'hazards' %}">Learn More</a>
-    </div>
-    <!-- Feature 2 -->
-    <div class="feature">
-        <h3>Education</h3>
-        <p>Access educational materials to enhance mining safety.</p>
-        <!-- Link to the Safety Lessons page -->
-        <a href="{% url 'safety_lessons' %}">Explore Education</a>
-    </div>
-    <!-- Feature 3 -->
-    <div class="feature">
-        <h3>Get Started</h3>
-        <p>Register and join the community to promote safety awareness.</p>
-        <!-- Link to the registration page -->
-        <a href="{% url 'register' %}">Register Now</a>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining Safety App</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
 
-<!-- Footer Section -->
-<footer class="footer">
-    <p>&copy; {{ current_year }} Mining Safety App. All rights reserved.</p>
-</footer>
+    <!-- Header -->
+    <header>
+        <div class="logo">Mining Safety App</div>
+        <nav>
+            <a href="{% url 'home' %}" class="nav-link">Home</a>
+            <a href="{% url 'hazards' %}" class="nav-link">Hazards</a>
+            <a href="{% url 'safety_lessons' %}" class="nav-link">Safety Lessons</a>
+            <a href="{% url 'register' %}" class="nav-link">Register</a>
+        </nav>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Your Safety, Our Priority</h1>
+            <p>Explore comprehensive resources to ensure safe mining practices.</p>
+            <a href="{% url 'safety_lessons' %}" class="cta-button">Discover More</a>
+        </div>
+        <div class="hero-image">
+            <img src="{% static 'images/safe mining.webp' %}" alt="Mining Safety Image">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <div class="feature-content">
+                <img src="{% static 'images/mining hazards.jpg' %}" alt="Hazards Icon" class="feature-icon">
+                <div class="feature-text">
+                    <h3>Hazards</h3>
+                    <p>Learn about potential mining hazards and how to mitigate them.</p>
+                    <a href="{% url 'hazards' %}" class="cta-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-content">
+                <img src="{% static 'images/mining education.jpg' %}" alt="Education Icon" class="feature-icon">
+                <div class="feature-text">
+                    <h3>Education</h3>
+                    <p>Access educational materials to enhance mining safety.</p>
+                    <a href="{% url 'safety_lessons' %}" class="cta-button">Explore Education</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Register Section -->
+    <section class="register">
+        <div class="feature">
+            <h3>Get Started</h3>
+            <p>Register and join the community to promote safety awareness.</p>
+            <a href="{% url 'register' %}" class="cta-button">Register Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mining Safety App. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
