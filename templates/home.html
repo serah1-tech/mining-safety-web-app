@@ -23,21 +23,21 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-overlay"></div> <!-- Dark overlay -->
+        <img src="{% static 'images/safe mining.webp' %}" alt="Mining Safety Image" class="hero-image">
         <div class="hero-text">
             <h1>Your Safety, Our Priority</h1>
             <p>Explore comprehensive resources to ensure safe mining practices.</p>
             <a href="{% url 'safety_lessons' %}" class="cta-button">Discover More</a>
         </div>
-        <div class="hero-image">
-            <img src="{% static 'images/safe mining.webp' %}" alt="Mining Safety Image">
-        </div>
     </section>
+    
 
     <!-- Features Section -->
     <section class="features">
         <div class="feature">
             <div class="feature-content">
-                <img src="{% static 'images/mining hazards.jpg' %}" alt="Hazards Icon" class="feature-icon">
+                <img src="{% static 'images/mining hazards.webp' %}" alt="Hazards Icon" class="feature-icon">
                 <div class="feature-text">
                     <h3>Hazards</h3>
                     <p>Learn about potential mining hazards and how to mitigate them.</p>
