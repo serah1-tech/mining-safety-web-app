@@ -1,29 +1,62 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hazard Alerts</title>
+    <title>Hazards - Mining Safety App</title>
     <link rel="stylesheet" href="{% static 'hazards/css/hazards_styles.css' %}">
 </head>
+
 <body>
+
+    <!-- Header -->
     <header>
-        <h1>Hazard Alerts</h1>
+        <div class="logo">Mining Safety App</div>
+        <nav>
+            <a href="{% url 'home' %}" class="nav-link">Home</a>
+            <a href="{% url 'hazards' %}" class="nav-link">Hazards</a>
+            <a href="{% url 'safety_lessons' %}" class="nav-link">Safety Lessons</a>
+            <a href="{% url 'register' %}" class="nav-link">Register</a>
+        </nav>
     </header>
-    <main>
-        <ul>
-            {% for alert in alerts %}
-                <li class="alert">
-                    <h2>{{ alert.location }}</h2>
-                    <p>{{ alert.description }}</p>
-                    <p><strong>Timestamp:</strong> {{ alert.timestamp }}</p>
-                </li>
-            {% endfor %}
-        </ul>
-    </main>
+
+    <!-- Hero Section for Hazards Page -->
+    <section class="hero hazards-hero">
+        
+        <div class="hero-text">
+            <h1>Understanding Mining Hazards</h1>
+            <p>Stay informed about the most common hazards in the mining industry and how to mitigate them.</p>
+        </div>
+    </section>
+
+    <!-- Hazards Content Section -->
+    <section class="hazards-content">
+        <h2>Common Mining Hazards</h2>
+        <p>Understanding hazards in the mining industry is crucial for ensuring safety. Below are some of the most common hazards and ways to manage them effectively.</p>
+
+        <!-- List of Hazards -->
+        <div class="hazards-list">
+            <div class="hazard">
+                <h3>1. Rock Falls</h3>
+                <p>Learn how to identify unstable rock formations and take preventative measures.</p>
+            </div>
+            <div class="hazard">
+                <h3>2. Gas Leaks</h3>
+                <p>Understand how to detect and handle harmful gases like methane and carbon monoxide.</p>
+            </div>
+            <div class="hazard">
+                <h3>3. Equipment Failure</h3>
+                <p>Explore best practices for maintaining and inspecting mining equipment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mining Safety App. All rights reserved.</p>
+    </footer>
+
 </body>
-<footer >
-    &copy; 2024 Mining Safety App. All rights reserved.
-</footer>
 </html>

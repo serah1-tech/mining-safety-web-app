@@ -1,0 +1,290 @@
+/* Reset and Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #020202;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fffefe;
+    color: #070707;
+    position: relative; /* Ensure proper stacking context for potential overlay elements */
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #070707;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #06f068;
+    border-radius: 5px;
+}
+
+/* Hero Section with Full Background Image */
+.hero {
+    background: url("{% static 'images/safe mining.webp' %}") no-repeat center center; /* Ensure image is centered */
+    background-size: cover; /* Ensure the image scales properly to cover the entire section */
+    height: 100vh; /* Ensure the hero section takes up the full height of the viewport */
+    width: 100%; /* Ensure it spans the full width */
+    color: rgb(255, 255, 255); /* For readability of text */
+    display: flex; /* For centering the content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Optional: if you want the text to be centered */
+    position: relative; /* Ensure overlay behaves as expected */
+}
+
+/* Ensure image covers full section */
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Send the image behind the text */
+}
+
+/* Overlay for Hero Section */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for text readability */
+    z-index: 0;
+}
+
+.hero-text {
+    max-width: 60%; /* Increased max-width for better use of space */
+    z-index: 20;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 90px; /* Larger title for better impact */
+    font-weight: bold;
+    color: #f0efef;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #000000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0ac539;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 40px;
+    background-color: #d3e4db;
+    gap: 20px;
+}
+
+.feature {
+    text-align: center;
+    flex: 1;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+   /* Updated Feature Icons to be Rectangular */
+.feature-icon {
+    width: 900px; /* You can adjust the width as needed */
+    height: 200px; /* Adjust the height to maintain a rectangular shape */
+    margin-bottom: 20px;
+    border-radius: 0; /* Removed the border-radius to make it rectangular */
+    border: 3px solid #36cc3e;
+    object-fit: cover; /* Ensures the image inside fits well */
+}
+
+    
+
+.feature h3 {
+    font-size: 28px;
+    color: #050505;
+    margin-bottom: 15px;
+}
+
+.feature p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.feature .cta-button {
+    background-color: #36cc3e;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.feature .cta-button:hover {
+    background-color: #28a745;
+}
+
+/* Register Section */
+.register {
+    padding: 50px 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.register h3 {
+    font-size: 28px;
+    color: #333;
+}
+
+.register p {
+    font-size: 18px;
+    color: #555;
+}
+
+.register .cta-button {
+    margin-top: 20px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.register .cta-button:hover {
+    background-color: #1e7e34;
+}
+
+/* Footer */
+footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    color: #000000;
+    font-size: 18px;
+    border-top: 4px solid #ddd;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .hero-text p {
+        font-size: 22px;
+    }
+
+    .features {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .feature {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .cta-button {
+        font-size: 16px;
+        padding: 10px 25px;
+    }
+}
+
+/* For smaller devices like phones */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-text p {
+        font-size: 20px;
+    }
+
+    .feature h3 {
+        font-size: 24px;
+    }
+
+    .feature p {
+        font-size: 16px;
+    }
+
+    .register h3 {
+        font-size: 24px;
+    }
+
+    .register p {
+        font-size: 16px;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+}

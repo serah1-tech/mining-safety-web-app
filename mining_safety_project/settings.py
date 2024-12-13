@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'education', #Education app added
     'hazards', #Hazard app added
-    'accounts'#Users app added
+    'accounts',#Users app added
     
     
 ]
@@ -131,13 +131,14 @@ USE_TZ = True
 # settings.py
 
 
+
 # URL for static files
 STATIC_URL = '/static/'
 
 # Directory where Django looks for static files in your project
 
 # Static files directory setup
-STATICFILES_DIRS = [BASE_DIR / 'static',]
+STATICFILES_DIRS = [BASE_DIR / "static",]
 
 # Directory for collected static files in production
 STATIC_ROOT = BASE_DIR / 'staticfiles'
@@ -149,3 +150,4 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

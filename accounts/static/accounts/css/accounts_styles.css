@@ -1,24 +1,125 @@
-/* accounts.css */
-.account-summary {
-    font-family: 'Courier New', Courier, monospace;
-    color: green;
-    background-color: lightgray;
-    padding: 20px;
-    border: 2px solid #333;
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-.account-item {
-    font-size: 16px;
-    margin-bottom: 8px;
+/* Header Styles */
+header {
+    background: #ffffff;
+    color: #10a110;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-footer {
-    background-color: #f1f1f1;
-    padding: 4px;
-    text-align: center;
+
+header .logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+    color: #079b1a;
+}
+
+header .nav-link {
     color: #000000;
-    font-size: 20px; /* Increase this to make the font larger */
-    border-top: 10px solid #ddd;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+
+header .nav-link:hover,
+header .nav-link.active {
+    background: #34495e;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background: #1abc9c;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+/* Form Section */
+.register-form {
+    background: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.register-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.register-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.register-form form button {
+    background: #1abc9c;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.register-form form button:hover {
+    background: #16a085;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    background: #2c3e50;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 30px 10px;
+    }
+
+    .register-form {
+        margin: 10px 20px;
+    }
 }

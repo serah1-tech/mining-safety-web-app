@@ -17,13 +17,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    color: rgb(14, 172, 61);
+    background-color: #f3ecec;
+    color:#28a745;
     padding: 1rem 2rem;
 }
 
 header .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
@@ -40,17 +40,18 @@ header .nav-link {
 }
 
 header .nav-link:hover {
-    color: #14b637;
+    color: #e02c0d;
 }
 
 /* Hero Section */
 .hero {
     position: relative;
     text-align: center;
-    color: #fffefe;
-    background-color: #089103;
-    padding: 8rem 4rem;
+    color: rgb(248, 6, 6);
+    background-color: #000000;
+    padding: 12rem 1rem;
 }
+
 
 
 .hero-text {
@@ -66,11 +67,12 @@ header .nav-link:hover {
 }
 
 .hero-text p {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
+    color:#f1f1f1;
 }
 
-/* Education Content */
-.education-content {
+/* Hazards Content */
+.hazards-content {
     padding: 2rem;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -78,45 +80,44 @@ header .nav-link:hover {
     border-radius: 8px;
 }
 
-.education-content h2 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    color: #000000;
+.hazards-content h2 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    color: #8b0000;
 }
 
-.education-content p {
-    margin-bottom: 2rem;
-    font-size: 1.3rem;
-    color: #313030;
-    
-    
+.hazards-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #2c2a2a;
 }
 
-.education-modules {
+.hazards-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    gap: 1.6rem;
 }
 
-.module {
-    background-color: #eaf6ff;
+.hazard {
+    background-color: #ffe5e5;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.module h3 {
-    font-size: 1.6em;
-    color: #129e35;
+.hazard h3 {
+    font-size: 1.6rem;
+    color: #550000;
     margin-bottom: 1rem;
 }
 
-.module p {
+.hazard p {
     font-size: 1.2rem;
     color: #555;
 }
 
+/* Footer */
 /* Footer */
 footer {
     background-color: #f1f1f1;
