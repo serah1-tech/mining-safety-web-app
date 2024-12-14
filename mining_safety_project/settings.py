@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@l_0$xnb#d@&!x_8#8^bn#t*v8rb^v!#*_s@jkky^ymd2klqbc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['mining-safety-web-app.onrender.com', 'localhost', '127.0.0.1']
 
