@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-@l_0$xnb#d@&!x_8#8^bn#t*v8rb^v!#*_s@jkky^ymd2klqbc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mining-safety-web-app.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -152,4 +152,3 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-ALLOWED_HOSTS = ['your-app-name.onrender.com', 'localhost']
