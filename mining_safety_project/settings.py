@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url  # Add this at the top with other imports
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +26,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@l_0$xnb#d@&!x_8#8^bn#t*v8rb^v!#*_s@jkky^ymd2klqbc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ['mining-safety-web-app.onrender.com', 'localhost', '127.0.0.1']
+DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
+
+ALLOWED_HOSTS = [
+    'mining-safety-web-app.onrender.com',  # Add this line
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -48,13 +55,18 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.http.ConditionalGetMiddleware',  # Add this
+
 ]
+USE_X_FORWARDED_HOST = True  # Add this line to support headers from proxies
+
 
 ROOT_URLCONF = 'mining_safety_project.urls'
 
@@ -81,15 +93,11 @@ WSGI_APPLICATION = 'mining_safety_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mining_safety_db',  # Replace with your database name
-        'USER': 'root',             # Replace with your MySQL username
-        'PASSWORD': 'BlessedDaughter100.', # Replace with your MySQL password
-        'HOST': 'localhost',        # Database host
-        'PORT': '3306',             # Default MySQL port
-    }
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL', 'mysql://root:BlessedDaughter100@localhost:3306/mining_safety_db')
+    )
 }
 
 
@@ -142,6 +150,7 @@ STATICFILES_DIRS = [BASE_DIR / "static",]
 
 # Directory for collected static files in production
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
