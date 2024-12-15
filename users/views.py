@@ -1,19 +1,19 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
 from django.contrib import messages
-from .forms import UserRegistrationForm
+from .forms import RegistrationForm
 
 def register(request):
-    if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
+    if request.method == "POST":
+        form = RegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, 'Your account has been created successfully! You can now log in.')
-            return redirect('login')  # Redirect to the login page
+            # Example: Process the form data
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            messages.success(request, "Registration successful!")
+            return redirect('home')  # Redirect to 'home' or another page
         else:
-            messages.error(request, 'There was an error with your registration. Please try again.')
+            messages.error(request, "There were errors in the form.")
     else:
-        form = UserRegistrationForm()
+        form = RegistrationForm()
 
-    return render(request, 'users/register.html', {'form': form})
+    return render(request, 'home.html', {'form': form})

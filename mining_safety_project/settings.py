@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url  # Add this at the top with other imports
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +25,7 @@ SECRET_KEY = 'django-insecure-@l_0$xnb#d@&!x_8#8^bn#t*v8rb^v!#*_s@jkky^ymd2klqbc
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'mining-safety-web-app.onrender.com',  # Add this line
@@ -47,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'education', #Education app added
     'hazards', #Hazard app added
-    'accounts',#Users app added
+    'users',
     
     
 ]
@@ -95,11 +93,15 @@ WSGI_APPLICATION = 'mining_safety_project.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'mysql://root:BlessedDaughter100@localhost:3306/mining_safety_db')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',  # Or another database engine you are using
+        'NAME': os.getenv('DB_NAME', 'mining_safety_db'),
+        'USER': os.getenv('DB_USER', 'root'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'BlessedDaughter100'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '3306'),
+    }
 }
-
 
 
 # Password validation
@@ -151,6 +153,8 @@ STATICFILES_DIRS = [BASE_DIR / "static",]
 # Directory for collected static files in production
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Configure email backend to catch errors for debugging (instead of printing to the console)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 

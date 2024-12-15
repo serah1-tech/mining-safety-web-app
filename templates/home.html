@@ -7,8 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mining Safety App</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/scripts.js' %}" defer></script>
+    <style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
+     <!-- Success Messages -->
+ {% if messages %}
+ <div class="messages">
+     {% for message in messages %}
+         <div class="alert alert-success">{{ message }}</div>
+     {% endfor %}
+ </div>
+{% endif %}
 
     <!-- Header -->
     <header>
@@ -17,8 +32,7 @@
             <a href="{% url 'home' %}" class="nav-link">Home</a>
             <a href="{% url 'hazards' %}" class="nav-link">Hazards</a>
             <a href="{% url 'safety_lessons' %}" class="nav-link">Safety Lessons</a>
-            <a href="{% url 'register' %}" class="nav-link">Register</a>
-        </nav>
+            <a href="#register-section" class="nav-link">Register</a>        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -31,7 +45,6 @@
             <a href="{% url 'safety_lessons' %}" class="cta-button">Discover More</a>
         </div>
     </section>
-    
 
     <!-- Features Section -->
     <section class="features">
@@ -57,15 +70,45 @@
             </div>
         </div>
     </section>
+<!--Registration Section -->
 
-    <!-- Register Section -->
-    <section class="register">
-        <div class="feature">
-            <h3>Get Started</h3>
-            <p>Register and join the community to promote safety awareness.</p>
-            <a href="{% url 'register' %}" class="cta-button">Register Now</a>
+<section id="register-section" class="register-form-section">
+    <h3>Register to Receive Updates</h3>
+    <form method="POST" action="{% url 'register' %}">
+        {% csrf_token %}
+        <div class="form-field">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
         </div>
-    </section>
+    
+        <div class="form-field">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+    
+        <button type="submit">Register</button>
+    </form>
+    
+
+    <!-- Error Messages -->
+    {% if form.errors %}
+        <div class="errors">
+            <ul>
+                {% for field, error_list in form.errors.items %}
+                    <li><strong>{{ field }}</strong>
+                        <ul>
+                            {% for error in error_list %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</section>
+
+
 
     <!-- Footer -->
     <footer>

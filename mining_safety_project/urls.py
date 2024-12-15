@@ -18,7 +18,8 @@ urlpatterns = [
     path('hazards/', include('hazards.urls')),        # Hazards app URLs
     path('auth/', include('django.contrib.auth.urls')),  # Authentication views
     path('users/', include('users.urls')),  # Users app URLs
-    path('accounts/', include('accounts.urls')), 
+    
+    
 ]
 
 # Serve static files in DEBUG mode
