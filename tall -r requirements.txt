@@ -1,0 +1,21 @@
+[33meaf0b04[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m changes from gunicorn to waitress made
+[33mbfb17e1[m Changes on the settings file
+[33m463c5ef[m Update for render deployment
+[33m4961693[m Securing important information
+[33mb35fe9b[m update on the front end
+[33m3c0b3de[m Add dj-database-url to requirements
+[33mfb597a6[m Update ALLOWED_HOSTS to include Render domain
+[33m1918410[m Set DEBUG to False for production
+[33m0559107[m Update ALLOWED_HOSTS for Render deployment
+[33md05504b[m Installation of gunicorn
+[33m98951b8[m Added requirements.txt
+[33m77c239c[m Prepare project for deployment
+[33m8b0347e[m Updating the css file and html file of the home page
+[33mea35d7f[m Updated HTML and CSS for Mining Safety App
+[33m21652bf[m accounts app added and the education and the hazards app have been fixed
+[33m33fdd40[m Add static files configuration and fix settings
+[33ma0cedb5[m Add migrations for education and users models, and update database schema
+[33m0369c5b[m Initial project setup with education and hazards apps
+[33maca5f44[m Updated front-end design for safety tips
+[33m8eb974e[m Initial commit: Set up Django project with basic safety tips app. - Created the main project structure with 'mining_safety' and 'safety_tips' apps. - Registered 'safety_tips' app in settings.py for inclusion. - Created basic view and URL configurations for displaying a simple message. - Implemented models for safety tips with title and description fields. - Created a basic home page displaying safety tips. - Set up the static and template folder structure for future frontend development.
+[33m59dedda[m Initial commit for SQL grouping and summarizing assignment
