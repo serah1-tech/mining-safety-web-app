@@ -4,30 +4,30 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* Success message styles */
+
+/* Success Message Styles */
 .success-message {
-    background-color: #fafafa; /* Green background */
-    color: rgb(33, 161, 16); /* White text */
-    padding: 5px;
+    background-color: #fafafa; /* Light background */
+    color: rgb(33, 161, 16); /* Green text */
+    padding: 10px;
     text-align: center;
     font-size: 16px;
     font-weight: bold;
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999; /* Ensure it is on top of other content */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
-    display: none; /* Initially hidden, will be shown using JavaScript */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
 }
 
-/* Show the success message */
 .success-message.show {
     display: block;
-    animation: slideDown 0.5s ease-out; /* Optional: animation for sliding down */
+    animation: slideDown 0.2s ease-out;
 }
 
-/* Slide down animation */
 @keyframes slideDown {
     from {
         top: -50px;
@@ -37,7 +37,7 @@
     }
 }
 
-
+/* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -51,9 +51,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: #fffefe;
+    background-color: #fff;
     color: #070707;
-    position: relative; /* Ensure proper stacking context for potential overlay elements */
 }
 
 header .logo {
@@ -81,32 +80,19 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* Hero Section with Full Background Image */
+/* Hero Section */
 .hero {
-    background: url("{% static 'images/safe mining.webp' %}") no-repeat center center; /* Ensure image is centered */
-    background-size: cover; /* Ensure the image scales properly to cover the entire section */
-    height: 100vh; /* Ensure the hero section takes up the full height of the viewport */
-    width: 100%; /* Ensure it spans the full width */
-    color: rgb(255, 255, 255); /* For readability of text */
-    display: flex; /* For centering the content */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    text-align: center; /* Optional: if you want the text to be centered */
-    position: relative; /* Ensure overlay behaves as expected */
+    background: url("{% static 'images/safe mining.webp' %}") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: #fff;
 }
 
-/* Ensure image covers full section */
-.hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* Send the image behind the text */
-}
-
-/* Overlay for Hero Section */
 .hero::before {
     content: "";
     position: absolute;
@@ -114,18 +100,17 @@ nav a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for text readability */
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 0;
 }
 
 .hero-text {
-    max-width: 60%; /* Increased max-width for better use of space */
-    z-index: 20;
-    text-align: center;
+    max-width: 60%;
+    z-index: 1;
 }
 
 .hero-text h1 {
-    font-size: 90px; /* Larger title for better impact */
+    font-size: 90px;
     font-weight: bold;
     color: #f0efef;
     margin-bottom: 20px;
@@ -139,7 +124,7 @@ nav a:hover {
 .cta-button {
     display: inline-block;
     padding: 12px 30px;
-    background-color: #000000;
+    background-color: #000;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -158,14 +143,14 @@ nav a:hover {
     justify-content: space-between;
     background-color: #d3e4db;
     gap: 10px;
+    padding: 20px;
 }
 
 .feature {
     text-align: center;
-    width: 25px; /* Adjust width to reduce size */
     flex: 1;
-    padding: 10px;
-    background-color: #ffffff;
+    padding: 20px;
+    background-color: #fff;
     border-radius: 4px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -176,19 +161,16 @@ nav a:hover {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Updated Feature Icons to be Rectangular */
 .feature-icon {
-    width: 650px; /* You can adjust the width as needed */
-    height: 200px; /* Adjust the height to maintain a rectangular shape */
+    width: 100%;
+    height: 200px;
     margin-bottom: 20px;
-    border-radius: 0; /* Removed the border-radius to make it rectangular */
     border: 3px solid #36cc3e;
-    object-fit: cover; /* Ensures the image inside fits well */
+    object-fit: cover;
 }
 
 .feature h3 {
     font-size: 22px;
-    color: #050505;
     margin-bottom: 15px;
 }
 
@@ -202,8 +184,8 @@ nav a:hover {
     background-color: #36cc3e;
     border-radius: 5px;
     font-size: 14px;
+    color: #fff;
     text-decoration: none;
-    color: white;
     transition: background-color 0.3s;
 }
 
@@ -211,19 +193,18 @@ nav a:hover {
     background-color: #28a745;
 }
 
-/* Registration Section Styles */
-/* Register Form Section Styling */
+/* Register Form Section */
 .register-form-section {
-    background-color: #ffffff;
-    padding: 70px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
     max-width: 500px;
     margin: 0 auto;
 }
 
-/* Title Styling */
 .register-form-section h3 {
     font-size: 24px;
     font-weight: bold;
@@ -231,7 +212,6 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-/* Styling the form fields */
 .form-field {
     margin-bottom: 15px;
 }
@@ -255,29 +235,14 @@ nav a:hover {
 }
 
 .form-field input:focus {
-    border-color: #4caf50; /* Highlight border on focus */
-   
-}
-.messages {
-    margin: 20px 0;
+    border-color: #4caf50;
 }
 
-.alert-success {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-}
-s
-
-
-/* Button Styling */
 button[type="submit"] {
     background-color: #4caf50;
-    color: white;
+    color: #fff;
     border: none;
-    padding:10px 100px;
+    padding: 15px;
     font-size: 16px;
     cursor: pointer;
     width: 100%;
@@ -306,14 +271,52 @@ button[type="submit"]:hover {
     margin-bottom: 10px;
 }
 
+/* Contact Us Section */
+.contact-us-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
 
+.contact-us-section h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.contact-us-section p {
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.contact-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
 
 /* Footer */
 footer {
     background-color: #f1f1f1;
     padding: 20px;
     text-align: center;
-    color: #000000;
+    color: #000;
     font-size: 12px;
     border-top: 4px solid #ddd;
     position: fixed;
@@ -322,7 +325,7 @@ footer {
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Design for Mobile */
+/* Responsive Design */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
@@ -339,58 +342,11 @@ footer {
 
     .features {
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
     }
 
-    .feature {
+    .register-form-section {
+        max-width: 90%;
         padding: 20px;
-        width: 100%;
-    }
-
-    .cta-button {
-        font-size: 16px;
-        padding: 10px 25px;
-    }
-
-    /* Adjust register form styling for smaller screens */
-    .register-form {
-        max-width: 90%; /* Make the form more fluid on mobile */
-        padding: 20px;
-    }
-
-    .register-form input,
-    .register-form button {
-        font-size: 16px;
-    }
-}
-
-/* For smaller devices like phones */
-@media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 36px;
-    }
-
-    .hero-text p {
-        font-size: 20px;
-    }
-
-    .feature h3 {
-        font-size: 24px;
-    }
-
-    .feature p {
-        font-size: 16px;
-    }
-
-    .register h3 {
-        font-size: 24px;
-    }
-
-    .register p {
-        font-size: 16px;
-    }
-
-    footer {
-        font-size: 16px;
     }
 }
