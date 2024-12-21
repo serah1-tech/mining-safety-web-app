@@ -103,8 +103,6 @@ threadpoolctl==3.5.0
 tldextract==5.1.2
 trio==0.25.1
 trio-websocket==0.11.1
-Twisted==24.3.0
-twisted-iocpsupport==1.0.4
 typing==3.7.4.3
 typing_extensions==4.10.0
 tzdata==2024.1
