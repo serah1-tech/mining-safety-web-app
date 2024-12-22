@@ -11,7 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security settings
 SECRET_KEY = os.getenv('SECRET_KEY', 'your_default_secret_key')
 
-DEBUG = os.getenv('DEBUG') == 'True'  
+
+DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
+
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
@@ -26,6 +28,7 @@ INSTALLED_APPS = [
     'education',  # Education app added
     'hazards',     # Hazard app added
     'users',       # Users app
+  
 ]
 
 MIDDLEWARE = [
@@ -38,6 +41,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.http.ConditionalGetMiddleware',
+   
 ]
 
 USE_X_FORWARDED_HOST = True  # To support headers from proxies
