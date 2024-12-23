@@ -221,24 +221,51 @@ nav a:hover {
 .feature .cta-button:hover {
     background-color: #28a745;
 }
-
-/* Register Form Section */
-.register-form-section {
+/* Info Section (About Us, Registration Form, Contact Us) */
+.info-section {
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: 0 auto;
+    gap: 20px; /* Space between columns */
 }
 
-.register-form-section h3 {
-    font-size: 24px;
-    font-weight: bold;
+.info-column {
+    flex: 1; /* Ensures each column takes up equal width */
+    max-width: 33%; /* Limits each column to one-third of the container width */
+    box-sizing: border-box;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-bottom: 20px;
+}
+
+.about-us h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.about-us p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Registration Form Section */
+.register-form {
+    padding: 20px;
+    background-color: #363535;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.register-form h3 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .form-field {
@@ -283,7 +310,7 @@ button[type="submit"]:hover {
     background-color: #45a049;
 }
 
-/* Error Styling */
+/* Error Styling for Form Validation */
 .errors {
     background-color: #ffdddd;
     color: #e74c3c;
@@ -301,25 +328,17 @@ button[type="submit"]:hover {
 }
 
 /* Contact Us Section */
-.contact-us-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 50px;
-    background-color: #f9f9f9;
+.contact-us {
+    padding: 20px;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    text-align: center;
 }
 
-.contact-us-section h3 {
-    text-align: center;
-    font-size: 2em;
+.contact-us h3 {
+    font-size: 24px;
     margin-bottom: 15px;
-}
-
-.contact-us-section p {
-    font-size: 1.1em;
-    text-align: center;
 }
 
 .contact-info {
@@ -329,6 +348,7 @@ button[type="submit"]:hover {
 
 .contact-info p {
     font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 .contact-info a {
@@ -339,6 +359,19 @@ button[type="submit"]:hover {
 .contact-info a:hover {
     text-decoration: underline;
 }
+
+/* Optional: Add some responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+        gap: 20px; /* Stack columns vertically on smaller screens */
+    }
+
+    .info-column {
+        max-width: 100%; /* Allow columns to take full width on small screens */
+    }
+}
+
 
 /* Footer */
 footer {
