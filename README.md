@@ -21,6 +21,9 @@ Data Management
 
 Store and retrieve data efficiently using MySQL.
 Frontend Templates
+## Live Demo
+You can check out the live version of the app at [https://mining-safety-web-app.onrender.com](https://mining-safety-web-app.onrender.com).
+
 
 **Steps to Build the System**
 
