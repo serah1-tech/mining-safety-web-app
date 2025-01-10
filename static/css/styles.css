@@ -257,7 +257,7 @@ nav a:hover {
 /* Registration Form Section */
 .register-form {
     padding: 20px;
-    background-color: #363535;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
