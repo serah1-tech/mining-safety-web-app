@@ -23,6 +23,8 @@ Store and retrieve data efficiently using MySQL.
 Frontend Templates
 
 **Steps to Build the System**
+
+
 Install Required Tools
 
 Install Python, MySQL, and pip (Python package manager).
@@ -58,7 +60,9 @@ Deploy & Test
 
 Test the entire system locally.
 Deploy the project to a web server if needed.
-Installation Instructions
+
+
+**Installation Instructions**
 Clone the repository:
 
 bash
@@ -105,7 +109,8 @@ Access the app in your browser at http://127.0.0.1:8000.
 Project Status
 Currently in development.
 Features still to be added: (e.g., Geo-hazard map integration, advanced user management, etc.)
-Contributing
+**Contributing**
+
 We welcome contributions to improve the project! If you'd like to contribute, please follow these steps:
 
 Fork the repository.
